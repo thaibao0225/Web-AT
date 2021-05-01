@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="align-self-center" >
+        @*1 post*@
+        @{
+            foreach (var item in @Model.PostsList)
+            {
+                <a href="/post/@item.Id">
+                            <table border="0">
+                                <tr>
+                                    <td rowspan="2"> <img src="@item.ImdUrl" alt="@item.Title" height="90px" width="90px" /></td>
+                                    <td> <b>@item.Title</b> </td>
+                                </tr>
+                                <tr>
+                                    <td>@item.ContentHeader</td>
+                                </tr>
+                            </table>
+                </a>
+            }
+        }
+    
+</div>

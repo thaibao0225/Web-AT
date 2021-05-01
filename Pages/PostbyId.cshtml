@@ -1,0 +1,28 @@
+﻿@page "/post/{id:int}"
+@model PostbyIdModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    @{
+        foreach (var item in Model.postsList)
+        {
+        <div>
+            <h2> @item.Title </h2>
+
+            <br />
+            <br />
+            <br />
+
+            <h3> @item.ContentHeader</h3>
+            <p>
+                @item.Content
+            </p>
+            <img src="@item.ImdUrl" alt="@item.Title" />
+        </div>
+        }
+    }
+
+</div>
+
